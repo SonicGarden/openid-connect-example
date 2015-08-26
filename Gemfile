@@ -1,12 +1,9 @@
 source 'https://rubygems.org'
-ruby '2.1.5'
+ruby '2.2.2'
 
 # Framework
-gem 'rails', '4.2.0'
-gem 'responders', '~>2.0'
-
-# Database
-gem 'pg'
+gem 'rails', '4.2.3'
+gem 'responders', '~> 2.0'
 
 # Authentication
 gem 'devise'
@@ -19,9 +16,10 @@ gem 'omniauth-facebook'
 gem 'bugsnag'
 
 # Assets
+gem 'sprockets', '2.12.4'
 gem 'jbuilder', '~> 2.0'
-gem 'sass-rails',   '~> 4.0'
-gem 'coffee-rails', '~> 4.0'
+gem 'sass-rails',   '~> 5.0'
+gem 'coffee-rails', '~> 4.1.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'haml-rails'
 
@@ -38,14 +36,14 @@ gem 'mini_magick'
 
 # Views
 gem 'bootstrap-sass'
-gem 'compass-rails', '2.0.0' #FIXME: Fix if solved "wrong number of arguments (2 for 1) in main.css.sass"
+gem 'compass'
+gem 'compass-rails'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'kaminari'
 
 # Server
-gem 'puma'
 gem 'rack-rewrite'
 
 group :doc do
@@ -70,6 +68,7 @@ group :development do
 end
 
 group :test, :development do
+  gem 'sqlite3'
   # TDD
   gem 'brakeman'
   gem 'capybara'
@@ -100,6 +99,8 @@ group :test, :development do
 end
 
 group :production, :staging do
+  gem 'puma'
+  gem 'pg'
   gem 'rails_12factor'
   gem 'newrelic_rpm'
 end

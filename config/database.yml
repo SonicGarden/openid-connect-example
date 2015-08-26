@@ -1,13 +1,11 @@
 development: &development
-  adapter: postgresql
-  database: appname_development
-  encoding: utf8
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
 test:
   <<: *development
-  database: appname_test
+  database: db/test.sqlite3
 production:
   <<: *development
-  database: appname_production
-staging:
-  <<: *development
-  database: appname_staging
+  database: db/production.sqlite3
