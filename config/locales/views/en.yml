@@ -9,8 +9,8 @@ en:
     range: "%{begin_at} - %{end_at}"
     ago: ' ago'
   site_info:
-    title: 'appname'
-    description: 'appname'
+    title: 'openid_connect_example'
+    description: 'openid_connect_example'
   nav:
     devise:
       confirmations:

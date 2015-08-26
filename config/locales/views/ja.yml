@@ -9,8 +9,8 @@ ja:
     range: "%{begin_at} 〜 %{end_at}"
     ago: '前'
   site_info:
-    title: 'appname'
-    description: 'appname'
+    title: 'openid_connect_example'
+    description: 'openid_connect_example'
   nav:
     devise:
       confirmations:

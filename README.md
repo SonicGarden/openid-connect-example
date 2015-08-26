@@ -1,10 +1,10 @@
-# appname
+# openid_connect_example
 
 ## Rename application's name
 
 ```
-git grep -l 'module Appname'|xargs sed -i '' 's/Appname/Yourappname/g'
-git grep -l 'appname'|xargs sed -i '' 's/appname/yourappname/g'
+git grep -l 'module OpenidConnectExample'|xargs sed -i '' 's/OpenidConnectExample/Youropenid_connect_example/g'
+git grep -l 'openid_connect_example'|xargs sed -i '' 's/openid_connect_example/youropenid_connect_example/g'
 ```
 
 ## Setup for development
@@ -44,32 +44,32 @@ $ guard
 ## heroku
 
 ```
-heroku create appname
-git remote rename heroku appname
-git push appname master
+heroku create openid_connect_example
+git remote rename heroku openid_connect_example
+git push openid_connect_example master
 heroku addons:add newrelic
 heroku addons:add pgbackups:auto-month
 heroku addons:add mandrill:starter
-rake figaro:heroku\[appname\]
+rake figaro:heroku\[openid_connect_example\]
 ```
 
 ### staging
 
 ```
-heroku create appname-stg
-git remote set-url appname-stg git@heroku.com:appname-stg.git
-git push appname master
+heroku create openid_connect_example-stg
+git remote set-url openid_connect_example-stg git@heroku.com:openid_connect_example-stg.git
+git push openid_connect_example master
 heroku addons:add newrelic
 heroku addons:add pgbackups:auto-month
 heroku addons:add mandrill:starter
 heroku addons:add mailtrap
 heroku config:set RACK_ENV=staging RAILS_ENV=staging
-rake figaro:heroku\[appname-stg\]
+rake figaro:heroku\[openid_connect_example-stg\]
 ```
 
 ## s3
 
-create 'appname' bucket on 'us-east-1'
+create 'openid_connect_example' bucket on 'us-east-1'
 
 ### IAM
 
@@ -83,7 +83,7 @@ create 'appname' bucket on 'us-east-1'
         "s3:GetBucket*"
       ],
       "Resource": [
-        "arn:aws:s3:::appname"
+        "arn:aws:s3:::openid_connect_example"
       ],
       "Effect": "Allow"
     },
@@ -94,7 +94,7 @@ create 'appname' bucket on 'us-east-1'
         "s3:PutObject*"
       ],
       "Resource": [
-        "arn:aws:s3:::appname/*"
+        "arn:aws:s3:::openid_connect_example/*"
       ],
       "Effect": "Allow"
     }
@@ -108,5 +108,5 @@ Fill config/application.yml
 AWS_ACCESS_KEY_ID: ''
 AWS_SECRET_ACCESS_KEY: ''
 AWS_REGION: 'us-east-1'
-AWS_S3_BUCKET: 'appname'
+AWS_S3_BUCKET: 'openid_connect_example'
 ```
