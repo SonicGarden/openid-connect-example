@@ -7,6 +7,8 @@ gem 'responders', '~> 2.0'
 
 # Authentication
 gem 'devise'
+gem 'doorkeeper'
+gem 'doorkeeper-openid_connect', '~> 1.0.0'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-github'

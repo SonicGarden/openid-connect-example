@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   storable_file :image
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable, :omniauthable
+         :omniauthable
   has_many :connections
 
   class << self
