@@ -48,7 +48,7 @@ eol
   issuer 'https://sg-openid-connect-example.herokuapp.com'
 
   subject do |resource_owner|
-    resource_owner.to_global_id.to_s
+    "user_#{resource_owner.id}"
   end
 
   # Expiration time on or after which the ID Token MUST NOT be accepted for processing. (default 120 seconds).
@@ -57,6 +57,5 @@ eol
   claims do
     normal_claim :name, &:name
     normal_claim :email, &:email
-    normal_claim :nickname, &:nickname
   end
 end
