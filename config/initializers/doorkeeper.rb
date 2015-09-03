@@ -105,9 +105,10 @@ Doorkeeper.configure do
   # Under some circumstances you might want to have applications auto-approved,
   # so that the user skips the authorization step.
   # For example if dealing with a trusted application.
-  # skip_authorization do |resource_owner, client|
-  #   client.superapp? or resource_owner.admin?
-  # end
+  skip_authorization do |resource_owner, client|
+    true # FIXME: テスト用。すべてのアプリケーションで許可画面スキップ
+    # client.superapp? or resource_owner.admin?
+  end
 
   # WWW-Authenticate Realm (default "Doorkeeper").
   realm 'openid-connect'
