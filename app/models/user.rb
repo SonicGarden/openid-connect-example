@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
   end
 
   def ready?
-    self.name.present?
+    self.name.present? && self.email.present?
   end
 
   def me?(user)
