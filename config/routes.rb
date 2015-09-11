@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   use_doorkeeper
   use_doorkeeper_openid_connect
-  devise_for :users, controllers: {omniauth_callbacks: 'authentications'}
+  devise_for :users, controllers: {registrations: 'registrations', omniauth_callbacks: 'authentications'}
   namespace :my do
     resource :account, only: [:update] do
       resource :setup, controller: 'account_setups', only: [:show]
